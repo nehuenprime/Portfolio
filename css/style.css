@@ -1,0 +1,112 @@
+:root{
+    --bg-color: #13181F;
+    --nav-color: #2D3949;
+}
+
+body{
+    background-color:var(--bg-color);
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+
+.header{
+    background-color: var(--nav-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    font-size: 18px;
+    color: #48e;
+}
+
+.header__open-nav-button{
+    color: #48e;
+    font-size: 3rem;
+    font-weight: 600;
+    position: absolute;
+    right: 10px;
+}
+
+.header__checkbox{
+    display: none;
+}
+
+.header__nav{
+    display: none;
+    background-color: var(--nav-color);
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index: -1;
+}
+
+.header__nav-list{
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.header__checkbox:checked ~ .header__nav{
+    display: flex;
+}
+
+
+.header__logo{
+    max-width: 100%;
+    width: 64px;
+    margin: 10px 20px;
+}
+
+.header__nav-item{
+    list-style: none;
+}
+
+.header__nav-item a{
+    color: inherit;
+}
+
+.header__nav-item a:not(:is(:hover, :active)){ /*cuando no está puesto el cursor en el link no se genera el text-decoration*/
+    text-decoration: none;
+}
+
+
+@media screen and (min-width: 600px){
+    .header{
+        padding: 18px 0;
+        animation: header-movement both;
+        animation-timeline: scroll();
+        position: sticky;
+        top: 0%;
+        animation-range: 10px 100px;
+    }
+
+    .header__nav{
+        display: block;
+        position: static;
+        height: auto;
+        width: auto;
+        justify-content: space-between;
+        background-color: initial;
+    }
+
+    .header__nav-list{
+        flex-direction: row;
+        height: auto;
+        width: auto;
+        gap: 20px;
+        margin-right: 40px;
+    }
+    
+    .header__open-nav-button{
+        display: none;
+    }
+}
