@@ -13,6 +13,7 @@ body{
     box-sizing: border-box;
     font-family: sans-serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body.modo-claro{
@@ -25,6 +26,7 @@ header.modo-claro{
     background-image: linear-gradient(to bottom, #2d3949, #c9daf0);
     transition: 0.5s ease, color 0.5s ease;
 }
+
 
 .material-symbols-outlined{
     margin-bottom: 20px;
@@ -193,12 +195,13 @@ main{
 /* SECTION CAJA DE TECNOLOGIAS */
 
 .section__tecnologia{
-    background-image: linear-gradient(to bottom, #13181f, #2e3949, #2d3949, #2d3949);
+    /*background-image: linear-gradient(to bottom, #13181f, #2d3949, #2d3949);*/
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: stretch;
     gap: 30px;
+    height: 100vh;
 }
 
 
@@ -206,17 +209,31 @@ main{
     width: 500px;
     height: 500px;
     background-color: transparent;
-    border: 1px solid #48e;
+    border: 1px solid var(--nav-color);
     margin: 10px;
     margin-top: 4rem;
     padding: 30px;
     display: flex;
     justify-content: center;
+    padding-bottom: 15px;
+    padding-top: 1rem;
+}
+
+.box h2{
+    color: #48e;
 }
 
 img{
     width:5rem;
 }
+
+/* SECTION PROYECTOS */
+
+    .section__proyect{
+        background-image: linear-gradient(to top , #13181f,#13181f, #13181f #2d3949);
+        height: 100vh;
+        border-top: 1px solid var(--nav-color);
+    }
 
 
 @keyframes header-movement {
@@ -227,5 +244,28 @@ img{
     to{
         padding: 10px 0;
         background-color: #10163266;
+    }
+}
+
+
+
+@media screen and (max-width:600px) {
+    .section__main{
+        max-width: 15rem;
+    }
+    .btn__main{
+        margin: 0;
+    }
+    .section__tecnologia{
+        display: grid;
+        padding: 10px;
+        height: 180vh;
+    }
+    .box{
+        max-width: 18rem;
+        max-height: 22rem;
+    }
+    #btn-modo{
+        margin-right: 3rem;
     }
 }
