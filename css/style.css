@@ -2,6 +2,8 @@
     --bg-color: #13181F;
     --nav-color: #2D3949;
     --text-color: #48e;
+    --modo-claro: #c9daf0;
+    --text-color-blanco: #dbdbdb;
 }
 
 body{
@@ -10,12 +12,27 @@ body{
     padding: 0%;
     box-sizing: border-box;
     font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+body.modo-claro{
+    background-color: var(--modo-claro);
+    color: #333;
+    transition: 0.5s ease, color 0.5s ease;
+}
+
+header.modo-claro{
+    background-image: linear-gradient(to bottom, #2d3949, #c9daf0);
+    transition: 0.5s ease, color 0.5s ease;
 }
 
 .material-symbols-outlined{
     margin-bottom: 20px;
     margin-top: 15px;
 }
+
+
+/* HEADER SECTION */
 
 .header{
     background-image: linear-gradient(to bottom, #2d3949, #13181f);
@@ -128,13 +145,10 @@ body{
     }
 }
 
-main{
-    justify-content: center;
-}
+/* SECTION INICIAL */
 
-.section__main{
-    max-width: 35rem;
-    color: #fff;
+main{
+    height: 100svh;
 }
 
 .btn__main{
@@ -144,10 +158,74 @@ main{
     margin: 5px;
     padding: 5px;
     border-radius: 15px;
-    background-image: linear-gradient(to right, #2d3949, #13181f);
+    background-image: linear-gradient(to top, #13181f, #2d3949);
+    max-width: 7rem;
+    text-align: center;
 }
 
 .btn__main:hover{
-    color: #fff;
-    border: 2px solid #fff;
+    color: var(--text-color-blanco);
+    border: 2px solid #bdbdbd;
+}
+
+.h2-name{
+    font-size: 50px;
+}
+
+.section__main {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15%;
+    padding-right: 40%;
+    color: var(--text-color-blanco);
+    max-width: 35rem;
+    width: 100vh;
+}
+
+.buttons__main {
+    display: flex;
+    gap: 15px;
+    margin-left: -.4rem;
+}
+
+/* SECTION CAJA DE TECNOLOGIAS */
+
+.section__tecnologia{
+    background-image: linear-gradient(to bottom, #13181f, #2e3949, #2d3949, #2d3949);
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+}
+
+
+.box{
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+    border: 1px solid #48e;
+    margin: 10px;
+    margin-top: 4rem;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    width:5rem;
+}
+
+
+@keyframes header-movement {
+    from{
+        padding: 20px 0;
+        background-color: #fff;
+    }
+    to{
+        padding: 10px 0;
+        background-color: #10163266;
+    }
 }
