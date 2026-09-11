@@ -65,7 +65,7 @@ header{
 
 .nav-desktop a{
     text-decoration:none;
-    color:black;
+    color:#dbdbdb;
 }
 
 /* BOTON MOBILE */
@@ -150,11 +150,59 @@ header{
 /* ----------------------------------- MAIN SECTION */
 
 
-
 main {
     padding-top: 6.25rem;
+    height: 100vh;
 }
 
+
+.btn__main{
+    text-decoration: none;
+    color: #dbdbdb;
+    background-color: #48e;
+    margin: 5px;
+    padding: 10px;
+    /* background-image: linear-gradient(to top, #13181f, #2d3949); */
+    max-width: 7rem;
+    text-align: center;
+}
+
+.btn__main:hover{
+    background-color: #679ceb;
+}
+
+.h2-name{
+    font-size: 50px;
+    max-width: 500px;
+    padding: 1rem 0;
+}
+
+.section__main {
+    min-height: calc(100vh - 120px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 40px 15%;
+
+    color: var(--text-color-blanco);
+
+    width: 100%;
+}
+.section__main p {
+    max-width: 500px;
+}
+.section__main h4{
+    padding-bottom: 1rem;
+}
+
+.buttons__main {
+    display: flex;
+    gap: 15px;
+    margin-left: -.4rem;
+    padding: 1rem 0;
+}
 
 
 
@@ -189,6 +237,8 @@ main {
 
 /* RESPONSIVE */
 
+
+
 @media (max-width:768px){
     
     .nav-desktop{
@@ -199,4 +249,11 @@ main {
         display:block;
     }
     
+}
+
+
+@media (max-width:600px) {
+    .section__main{
+        max-width: 35rem;
+    }
 }
