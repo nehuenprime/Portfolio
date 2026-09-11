@@ -1,18 +1,35 @@
+:root{
+    --bg-color: #13181F;
+    --nav-color: #2D3949;
+    --text-color: #48e;
+    --modo-claro: #deeafa;
+    --text-color-blanco: #dbdbdb;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
+body{
+    background-color:var(--bg-color);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 
+header{
+    background-image: linear-gradient(to bottom, #2d3949, #13181f);
+}
 
 .navbar-custom{
     position:fixed;
     top:0;
     width:100%;
     z-index:1000;
-
-    background:rgba(255,255,255,.8);
+    padding: .8rem;
+    
+    background-color: var(--nav-color);
     backdrop-filter:blur(12px);
     border-bottom:1px solid rgba(0,0,0,.1);
 }
@@ -20,19 +37,24 @@
 .container-nav{
     max-width:1200px;
     margin:auto;
-
+    
     display:flex;
     justify-content:space-between;
     align-items:center;
-
+    
     padding:1rem 2rem;
 }
 
 .logo{
     text-decoration:none;
-    color:black;
+    color:#dbdbdb;
     font-size:1.5rem;
     font-weight:bold;
+}
+
+.verif-ig{
+    width: 1.4rem;
+    margin-bottom: -5px;
 }
 
 .nav-desktop{
@@ -54,6 +76,7 @@
     background:none;
     font-size:2rem;
     cursor:pointer;
+    color: #dbdbdb;
 }
 
 /* MENU LATERAL */
@@ -62,20 +85,20 @@
     position:fixed;
     top:0;
     right:-300px;
-
+    
     width:300px;
     height:100vh;
-
-    background:white;
-
+    
+    background:var(--bg-color);
+    
     display:flex;
     flex-direction:column;
-
+    
     padding:5rem 2rem;
     gap:2rem;
-
+    
     transition:.3s ease;
-
+    
     z-index:2000;
 }
 
@@ -85,7 +108,7 @@
 
 .menu-mobile a{
     text-decoration:none;
-    color:black;
+    color:#dbdbdb;
     font-size:1.2rem;
 }
 
@@ -93,12 +116,13 @@
     position:absolute;
     top:20px;
     right:20px;
-
+    
     border:none;
     background:none;
-
+    
     font-size:1.8rem;
     cursor:pointer;
+    color: #dbdbdb;
 }
 
 /* FONDO OSCURO */
@@ -106,14 +130,14 @@
 .overlay{
     position:fixed;
     inset:0;
-
+    
     background:rgba(0,0,0,.5);
-
+    
     opacity:0;
     visibility:hidden;
-
+    
     transition:.3s;
-
+    
     z-index:1500;
 }
 
@@ -122,16 +146,57 @@
     visibility:visible;
 }
 
+
+/* ----------------------------------- MAIN SECTION */
+
+
+
+main {
+    padding-top: 6.25rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* RESPONSIVE */
 
 @media (max-width:768px){
-
+    
     .nav-desktop{
         display:none;
     }
-
+    
     .menu-btn{
         display:block;
     }
-
+    
 }
