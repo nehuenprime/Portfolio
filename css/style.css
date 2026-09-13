@@ -79,7 +79,7 @@ header{
     color: #dbdbdb;
 }
 
-/* MENU LATERAL */
+/* ------------------------------------------------------- MENU LATERAL */
 
 .menu-mobile{
     position:fixed;
@@ -147,7 +147,7 @@ header{
 }
 
 
-/* ----------------------------------- MAIN SECTION */
+/* ---------------------------------------------------------- MAIN SECTION */
 
 
 main {
@@ -206,6 +206,85 @@ main {
 
 
 
+/* ------------------------------------------------------------ SECTION CAJA DE TECNOLOGIAS */
+
+.section__tecnologia{
+    /*background-image: linear-gradient(to bottom, #13181f, #2d3949, #2d3949);*/
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    height: 100vh;
+}
+
+
+.box {
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+    border: 1px solid var(--nav-color);
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+
+    padding: 2rem;
+    box-sizing: border-box;
+}
+.box h2{
+    color: #dbdbdb;
+    padding: 1rem 0;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+
+.tech-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    width: 100%;
+    margin-top: 20px;
+}
+
+.tech-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 10px;
+    border-bottom: 1px solid #374151;
+}
+
+.tech-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tech-info img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.tech-info span {
+    font-size: 18px;
+    font-weight: 600;
+    color: #dbdbdb;
+}
+
+.nivel {
+    font-size: 14px;
+    color: #3b82f6;
+}
+
+.img-tec{
+    width: 5rem;
+}
 
 
 
@@ -232,10 +311,7 @@ main {
 
 
 
-
-
-
-/* RESPONSIVE */
+/* --------------------------------------------------------------- RESPONSIVE */
 
 
 
@@ -255,5 +331,11 @@ main {
 @media (max-width:600px) {
     .section__main{
         max-width: 35rem;
+    }
+    .section__tecnologia {
+        display: grid;
+        padding: 10px;
+        height: auto;
+        gap: 20px;
     }
 }
