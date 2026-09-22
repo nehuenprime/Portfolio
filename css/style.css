@@ -111,6 +111,10 @@ header{
     color:#dbdbdb;
     font-size:1.2rem;
 }
+.nav-desktop a:hover{
+    /**/
+    color: #deeafa;
+}
 
 .close-btn{
     position:absolute;
@@ -232,12 +236,18 @@ main {
 
     padding: 2rem;
     box-sizing: border-box;
+    transition: 0.3s ease;
 }
 .box h2{
     color: #dbdbdb;
     padding: 1rem 0;
     margin: 0;
     margin-bottom: 20px;
+}
+.box:hover {
+    border-color: #147ef5;
+    box-shadow: 0 0 25px rgba(20, 126, 245, 0.08);
+    transform: translateY(-3px);
 }
 
 
@@ -337,5 +347,8 @@ main {
         padding: 10px;
         height: auto;
         gap: 20px;
+    }
+    .box{
+        max-width: 310px;
     }
 }
