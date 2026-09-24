@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 body{
     background-color:var(--bg-color);
@@ -287,6 +287,10 @@ main {
     color: #dbdbdb;
 }
 
+.aprendiendo{
+    color: #f1ff31 !important;
+}
+
 .nivel {
     font-size: 14px;
     color: #3b82f6;
@@ -296,11 +300,73 @@ main {
     width: 5rem;
 }
 
+/* ------------------------------------------------------------------------- SECTION PROYECT*/
 
+.section-proyect{
+    background-color: #191f27;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
 
+}
 
+.project-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg-color);
+    border: 1px solid #e5e5e5;
+    transition: transform .3s ease, box-shadow .3s ease;
+    margin: 1rem;
+    margin-bottom: 4rem;
+    height: auto;
+}
 
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .10);
+}
 
+.project-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 22px;
+}
+
+.project-info h3 {
+    margin-bottom: 8px;
+    color: #dbdbdb;
+}
+
+.project-info p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.project-tech span {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #f1f1f1;
+    font-size: .8rem;
+}
+
+.project-link {
+    text-decoration: none;
+    font-weight: 600;
+}
 
 
 
@@ -324,6 +390,17 @@ main {
 /* --------------------------------------------------------------- RESPONSIVE */
 
 
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+@media (max-width: 900px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
 
 @media (max-width:768px){
     
