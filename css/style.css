@@ -11,6 +11,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Nunito", sans-serif;
+    scrollbar-color: var(--text-color-blanco) var(--nav-color) ;
 }
 body{
     background-color:var(--bg-color);
@@ -309,24 +310,33 @@ main {
     justify-content: center;
     align-items: stretch;
     gap: 30px;
-
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card {
     border-radius: 16px;
     overflow: hidden;
     background: var(--bg-color);
-    border: 1px solid #e5e5e5;
+    border: 1px solid var(--nav-color);
     transition: transform .3s ease, box-shadow .3s ease;
     margin: 1rem;
     margin-bottom: 4rem;
     height: auto;
 }
 
-.project-card:hover {
+.project-card img:hover{
+    scale: calc(1.05);
+    transition: 0.3s;
+}
+
+/* .project-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, .10);
-}
+
+    scale: calc(1.01);
+} */
 
 .project-image {
     width: 100%;
@@ -359,13 +369,19 @@ main {
 .project-tech span {
     padding: 5px 10px;
     border-radius: 20px;
-    background: #f1f1f1;
+    background: var(--nav-color);
     font-size: .8rem;
+    color: var(--text-color-blanco);
 }
 
 .project-link {
     text-decoration: none;
     font-weight: 600;
+    color: var(--text-color);
+}
+
+.project-link:hover{
+    color: #74b5ff;
 }
 
 
@@ -411,7 +427,15 @@ main {
     .menu-btn{
         display:block;
     }
-    
+    .section-proyect {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 2rem;
+    }
+
+    .project-card {
+        margin-bottom: 2rem;
+    }
 }
 
 
