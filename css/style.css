@@ -181,11 +181,13 @@ main {
     background-color: #48e;
     text-decoration: none;
 }
-.btn__main:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(68,136,238,.3); }
+.btn__main:hover { transform: translateY(-2px); /*box-shadow: 0 8px 20px #4488ee4d;*/ }
 
 .btn__main:nth-child(1){color: var(--modo-claro);}
 .btn__main:nth-child(2) { background: transparent; color: #48e; }
-.btn__main:nth-child(2):hover { background: rgba(68,136,238,.12); color: #74b5ff; }
+.btn__main:nth-child(2):hover { background: #4488ee1f; color: #74b5ff; }
+
+.btn__main:nth-child(3){ background: #4488ee1f; color: #74b5ff; }
 
 .h2-name { 
     font-size: clamp(2.2rem, 5vw, 3.5rem);
