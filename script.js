@@ -17,6 +17,15 @@ menuBtn.addEventListener("click", abrirMenu);
 closeBtn.addEventListener("click", cerrarMenu);
 overlay.addEventListener("click", cerrarMenu);
 
+const linksMobile = document.querySelectorAll("#menuMobile a");
+
+linksMobile.forEach(link => {
+    link.addEventListener("click", cerrarMenu);
+});
+
+document.addEventListener("keydown", e => {
+    if (e.key === "Escape") cerrarMenu();
+});
 
 /*aparicion de las cosas al ir bajando*/
 
@@ -27,4 +36,4 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".box, .project-card").forEach(el => {
     el.classList.add("reveal");
     observer.observe(el);
-});
+}); 
