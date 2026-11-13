@@ -641,6 +641,12 @@ main {
         gap: 20px;
     }
     .project-image{
-    filter: grayscale(0);
-}
+        filter: grayscale(0);
+    }
+    .buttons__main {
+        flex-wrap: wrap;
+    }
+    .btn__main {
+        white-space: nowrap; 
+    }
 }
