@@ -1,10 +1,45 @@
 :root{
     --bg-color: #13181F;
+    --bg-alt: #191f27;
     --nav-color: #2D3949;
-    --text-color: #48e;
-    --modo-claro: #deeafa;
-    --text-color-blanco: #dbdbdb;
+    --nav-bg: #2d3949cc;
+    --header-from: #2d3949;
+    --text-color: #48e;             
+    --accent-hover: #679ceb;
+    --accent-soft: rgba(68,136,238,.12);
+    --text-color-blanco: #dbdbdb;   
+    --text-muted: #9aa4b2;
+    --border-color: #374151;
+    --card-bg: rgba(45,57,73,.15);
+    --card-solid: #13181f;
+    --glow: rgba(68,136,238,.25);
+    --dots: rgba(255,255,255,.07);
+    --shadow: rgba(0,0,0,.35);
+    color-scheme: dark;
 }
+
+:root[data-theme="light"]{
+    --bg-color: #f8fafc;
+    --bg-alt: #f1f5f9;
+    --nav-color: #e2e8f0;
+    --nav-bg: rgba(255,255,255,.85);
+    --header-from: #ffffff;
+    --text-color: #16a34a;
+    --accent-hover: #22c55e;
+    --accent-soft: rgba(22,163,74,.1);
+    --text-color-blanco: #1e293b;
+    --text-muted: #475569;
+    --border-color: #e2e8f0;
+    --card-bg: #ffffff;
+    --card-solid: #ffffff;
+    --glow: rgba(34,197,94,.3);
+    --dots: rgba(0,0,0,.08);
+    --shadow: rgba(15,23,42,.12);
+    color-scheme: light;
+}
+
+:root[data-theme="light"] .aprendiendo{ color: #b45309 !important; }
+:root[data-theme="light"] .nivel.aprendiendo{ background: rgba(180,83,9,.1); }
 
 html { scroll-behavior: smooth; } 
 section[id] { scroll-margin-top: 90px; } 
@@ -19,10 +54,11 @@ section[id] { scroll-margin-top: 90px; }
 body{
     background-color:var(--bg-color);
     overflow-x: hidden;
+    transition: background-color .3s, color .3s; 
 }
 
 header{
-    background-image: linear-gradient(to bottom, #2d3949, #13181f);
+    background-image: linear-gradient(to bottom, var(--header-from), var(--bg-color));
 }
 
 .navbar-custom{
@@ -34,7 +70,7 @@ header{
     
     backdrop-filter:blur(12px);
     border-bottom:1px solid rgba(0,0,0,.1);
-    background-color: #2d3949cc;
+    background-color: var(--nav-bg);
 }
 
 .container-nav{
@@ -50,7 +86,7 @@ header{
 
 .logo{
     text-decoration:none;
-    color:#dbdbdb;
+    color:var(--text-color-blanco);
     font-size:1.5rem;
     font-weight:bold;
 }
@@ -68,7 +104,7 @@ header{
 
 .nav-desktop a{
     text-decoration:none;
-    color:#dbdbdb;
+    color:var(--text-color-blanco);
     position: relative; 
     padding: 4px 0; 
     transition: color .2s; 
@@ -88,7 +124,7 @@ header{
     background:none;
     font-size:2rem;
     cursor:pointer;
-    color: #dbdbdb;
+    color: var(--text-color-blanco);
 }
 /* ------------------------------------------------------- MENU LATERAL */
 
@@ -119,12 +155,12 @@ header{
 
 .menu-mobile a{
     text-decoration:none;
-    color:#dbdbdb;
+    color:var(--text-color-blanco);
     font-size:1.2rem;
 }
 .nav-desktop a:hover{
     /**/
-    color: #deeafa;
+    color: var(--text-color);
 }
 
 .close-btn{
@@ -137,10 +173,10 @@ header{
     
     font-size:1.8rem;
     cursor:pointer;
-    color: #dbdbdb;
+    color: var(--text-color-blanco);
 }
 
-/* FONDO OSCURO */
+/* -------------------------------------------------------------- FONDO OSCURO */
 
 .overlay{
     position:fixed;
@@ -162,6 +198,27 @@ header{
 }
 
 
+.nav-actions{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.theme-btn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--text-color-blanco);
+    font-size: 1.2rem;
+    display: flex;
+    transition: .25s;
+}
+
+.theme-btn:hover{
+    color: var(--text-color);
+    transform: rotate(15deg);
+}
+
 /* ---------------------------------------------------------- MAIN SECTION */
 
 
@@ -174,20 +231,21 @@ main {
 .btn__main {
     margin: 0; max-width: none;
     padding: .7rem 1.4rem;
-    border: 1px solid #48e;
+    border: 1px solid var(--text-color);
     border-radius: 8px;
     font-weight: 600;
     transition: .25s;
-    background-color: #48e;
+    background-color: var(--text-color);
     text-decoration: none;
+    color: #fff;
 }
-.btn__main:hover { transform: translateY(-2px); /*box-shadow: 0 8px 20px #4488ee4d;*/ }
+.btn__main:hover { transform: translateY(-2px); /*box-shadow: 0 8px 20px #4488ee4d;*/ background-color: var(--accent-hover);}
 
 .btn__main:nth-child(1){color: var(--modo-claro);}
-.btn__main:nth-child(2) { background: transparent; color: #48e; }
-.btn__main:nth-child(2):hover { background: #4488ee1f; color: #74b5ff; }
+.btn__main:nth-child(2) { background: transparent; color: var(--text-color); }
+.btn__main:nth-child(2):hover { background: var(--accent-soft); color: var(--accent-hover); }
 
-.btn__main:nth-child(3){ background: #4488ee1f; color: #74b5ff; }
+.btn__main:nth-child(3){ background: var(--accent-soft); color: var(--accent-hover); }
 
 .h2-name { 
     font-size: clamp(2.2rem, 5vw, 3.5rem);
@@ -195,7 +253,7 @@ main {
     max-width: 560px; 
 }
 .accent {
-    background: linear-gradient(90deg, #48e, #74b5ff);
+    background: linear-gradient(90deg, var(--text-color), var(--accent-hover));
     -webkit-background-clip: text; background-clip: text;
     color: transparent;
 }
@@ -235,7 +293,7 @@ main {
     top: 50%; right: 8%;
     width: 480px; height: 480px;
     transform: translateY(-50%);
-    background: radial-gradient(circle, rgba(68,136,238,.25), transparent 65%);
+    background: radial-gradient(circle, var(--glow), transparent 65%);
     filter: blur(20px);
     z-index: -1;
 }
@@ -243,7 +301,7 @@ main {
 .section__main::after { 
     content: "";
     position: absolute; inset: 0;
-    background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+    background-image: radial-gradient(var(--dots) 1px, transparent 1px);
     background-size: 28px 28px;
     mask-image: radial-gradient(ellipse at 70% 50%, #000 0%, transparent 70%);
     z-index: -1;
@@ -281,17 +339,17 @@ main {
 
     width: auto; height: auto; min-height: 460px; margin: 0;
     border-radius: 16px;
-    background: rgba(45,57,73,.15);
+    background: var(--card-bg);
 }
 .box h2{
-    color: #dbdbdb;
+    color: var(--text-color-blanco);
     padding: 1rem 0;
     margin: 0;
     margin-bottom: 20px;
 }
 .box:hover {
-    border-color: #147ef5;
-    box-shadow: 0 0 25px rgba(20, 126, 245, 0.08);
+    border-color: var(--text-color);
+    box-shadow: 0 0 25px var(--accent-soft);
     transform: translateY(-3px);
 }
 
@@ -311,13 +369,13 @@ main {
     align-items: center;
 
     padding-bottom: 10px;
-    border-bottom: 1px solid #374151;
+    border-bottom: 1px solid var(--border-color);
 
     transition: .2s;
 }
 
 .tech-item:hover { 
-    border-bottom-color: #48e; 
+    border-bottom-color: var(--text-color); 
     transform: translateX(2px); 
 }
 
@@ -336,7 +394,7 @@ main {
 .tech-info span {
     font-size: 18px;
     font-weight: 600;
-    color: #dbdbdb;
+    color: var(--text-color-blanco);
 }
 
 .nivel.aprendiendo{
@@ -346,10 +404,10 @@ main {
 
 .nivel {
     font-size: 14px;
-    color: #3b82f6;
+    color: var(--text-color);
     padding: 3px 10px; 
     border-radius: 20px;
-    background: #3b82f61f;
+    background: var(--accent-soft);
     font-size: .8rem; 
     font-weight: 600;
 }
@@ -361,7 +419,7 @@ main {
 /* ------------------------------------------------------------------------- SECTION PROYECT*/
 
 .section-proyect{
-    background-color: #191f27;
+    background-color: var(--bg-alt);
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -391,8 +449,8 @@ main {
 
 .project-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0,0,0,.35);
-    border-color: #48e;
+    box-shadow: 0 12px 30px var(--shadow);
+    border-color: var(--text-color);
 }
 
 .project-card img:hover{
@@ -426,11 +484,11 @@ main {
 
 .project-info h3 {
     margin-bottom: 8px;
-    color: #dbdbdb;
+    color: var(--text-color-blanco);
 }
 
 .project-info p {
-    color: #9aa4b2;
+    color: var(--text-muted);
     line-height: 1.5;
 }
 
@@ -456,7 +514,7 @@ main {
 }
 
 .project-link:hover{
-    color: #74b5ff;
+    color: var(--accent-hover);
 }
 
 /* aparición al hacer scroll */
@@ -493,7 +551,7 @@ main {
 }
 
 .contacto-box:hover{
-    border-color: #147ef5;
+    border-color: var(--text-color);
     box-shadow: 0 0 25px #147ef514;
 }
 
@@ -510,7 +568,7 @@ main {
 
 .contacto-box h3{
     font-size: 1.8rem;
-    color: #fff;
+    color: var(--text-color-blanco);
     margin: .8rem 0 .4rem;
 }
 

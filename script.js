@@ -37,3 +37,24 @@ document.querySelectorAll(".box, .project-card").forEach(el => {
     el.classList.add("reveal");
     observer.observe(el);
 }); 
+
+
+/*fondo oscuro*/
+
+const themeBtn = document.getElementById("themeBtn");
+const themeIcon = themeBtn.querySelector("i");
+const root = document.documentElement;
+
+function aplicarTema(tema){
+    root.setAttribute("data-theme", tema);
+    localStorage.setItem("tema", tema);
+
+    themeIcon.className = tema === "light" ? "bi bi-moon-stars-fill" : "bi bi-sun-fill";
+    themeBtn.setAttribute("aria-label", tema === "light" ? "Cambiar a modo oscuro" : "Cambiar a modo claro");
+}
+
+aplicarTema(localStorage.getItem("tema") || "dark");
+
+themeBtn.addEventListener("click", () => {
+    aplicarTema(root.getAttribute("data-theme") === "light" ? "dark" : "light");
+});

@@ -18,10 +18,12 @@
                     
                     <a href="#" class="logo">Nehuen Boneo <img src="img/verificado-ig.png" alt="verificado" class="verif-ig"></a>
                     
+                    <button class="theme-btn" id="themeBtn" aria-label="Cambiar tema">
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
                     <button class="menu-btn" id="menuBtn">
                         ☰
                     </button>
-                    
                     <ul class="nav-desktop">
                         <li><a href="#about">About</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
@@ -256,7 +258,9 @@
     </section>
     </main>
 
-
+    <script>
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("tema") || "dark");
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
