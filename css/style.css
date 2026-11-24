@@ -429,7 +429,7 @@ main {
     height: auto;
     margin-top: 0; 
     padding: 5rem 5%; 
-    height: 90vh;
+    /* height: 90vh; */
 }
 .projects-container { 
     max-width: 1300px; 
@@ -470,8 +470,8 @@ main {
     height: 220px;
     object-fit: cover;
     display: block;
-    filter: grayscale(100%);
-    transition: filter .3s, scale .4s; 
+    /* filter: grayscale(100%);
+    transition: filter .3s, scale .4s;  */
 }
 
 .project-image:hover{
@@ -526,7 +526,6 @@ main {
 
 /* ------------------------------------------------------------------ SECTION CONTACT*/
 
-/* ------------------------------------------------------------ CONTACTO */
 
 .contacto-section{
     height: 80vh;
